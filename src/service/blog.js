@@ -2,12 +2,11 @@ import http from '../core/http'
 
 var options = {}
 export function _getBlogList() {
-    console.log(123)
     let api_url = `/blog/select`
     return http.get(api_url, {}, options)
 }
 
-export function addBlogList(params) {
+export function _writeBlogList(params) {
     let api_url = `/blog/insert`
     var par = {
         title: params.title,
@@ -16,12 +15,12 @@ export function addBlogList(params) {
         intro: params.intro,
         content: params.content,
         createTime: params.createTime,
-        publishType: params.publishType,
+        publishType: params.publishType
     }
     return http.post(api_url, params, options)
 }
 
-export function updateBlog(params) {
+export function _updateBlog(params) {
     let api_url = `/blog/update`
     var par = {
         id: params.id,
@@ -31,15 +30,15 @@ export function updateBlog(params) {
         intro: params.intro,
         content: params.content,
         createTime: params.createTime,
-        publishType: params.publishType,
+        publishType: params.publishType
     }
     return http.post(api_url, params, options)
 }
 
-export function deleteBlog(params) {
+export function _deleteBlog(params) {
     let api_url = `/blog/delete`
     var par = {
-        id: params.id,
+        id: params.id
     }
     return http.post(api_url, params, options)
 }

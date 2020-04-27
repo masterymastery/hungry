@@ -2,3 +2,6 @@ export const ADDNAME = 'ADDNAME'
 export const ADDAGE = 'ADDAGE'
 
 export const GETBOLGLIST = 'GETBOLGLIST'
+export const WRITEBOLGLIST = 'WRITEBOLGLIST'
+export const UPDATEBOLGLIST = 'UPDATEBOLGLIST'
+export const DELBOLGLIST = 'DELBOLGLIST'

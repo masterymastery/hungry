@@ -1,33 +1,26 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { _getBlogList } from '../service/blog'
+import { connect } from 'react-redux'
+import { getBlogListAsync } from '../redux/actions'
 
 class preview extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            name: 'xx',
-            blogList: [],
+            name: 'xx'
         }
-        this.getBlogList = this.getBlogList.bind(this)
-        this.getBlogList()
+        this.props.getBlogListAsync()
     }
-    getBlogList() {
-        _getBlogList().then((res) => {
-            this.setState({
-                blogList: res.data.list,
-            })
-            // set以后也没有值
-            console.log(this.state.blogList)
-        })
-    }
+
     render() {
+        const { blogList } = this.props
         // 首次render这里没有值
-        console.log(this.blogList)
+        // console.log(this.blogList)
         return (
             <div className="preview">
                 <ul>
-                    {this.state.blogList.map((item) => (
+                    {blogList.map((item) => (
                         <li key={item.id}>
                             {item.createTime}
                             <Link to={`/view/${item.id}`}>{item.title}</Link>
@@ -39,4 +32,9 @@ class preview extends React.Component {
     }
 }
 
-export default preview
+export default connect(
+    (state) => ({
+        blogList: state.getBlogList
+    }),
+    { getBlogListAsync }
+)(preview)
