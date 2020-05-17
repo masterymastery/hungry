@@ -6,10 +6,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
-<<<<<<< HEAD
-=======
     "@tinymce/tinymce-react": "^3.5.0",
->>>>>>> 3e734658b9f5d0385b93a57a4bc39df032d96e3f
     "antd": "^4.1.4",
     "axios": "^0.19.2",
     "http-proxy-middleware": "^1.0.3",
@@ -21,15 +18,10 @@
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
-<<<<<<< HEAD
-    "redux": "^4.0.5",
-    "redux-thunk": "^2.3.0"
-=======
     "react-tinymce": "^0.7.0",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
     "tinymce": "^5.2.2"
->>>>>>> 3e734658b9f5d0385b93a57a4bc39df032d96e3f
   },
   "scripts": {
     "start": "react-scripts start",

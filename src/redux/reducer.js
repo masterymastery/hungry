@@ -1,9 +1,5 @@
 //包含n个reducer函数的模块
-<<<<<<< HEAD
-import { ADDNAME, ADDAGE, GETBOLGLIST } from './actionType'
-=======
 import { ADDNAME, ADDAGE, GETBOLGLIST, WRITEBOLGLIST, UPDATEBOLGLIST, DELBOLGLIST } from './actionType'
->>>>>>> 3e734658b9f5d0385b93a57a4bc39df032d96e3f
 import { combineReducers } from 'redux'
 
 function addName(state = 'initRedux', action) {
@@ -33,8 +29,6 @@ function getBlogList(state = [], action) {
     }
 }
 
-<<<<<<< HEAD
-=======
 function writeBlogList(state = [], action) {
     switch (action.type) {
         case WRITEBOLGLIST:
@@ -60,15 +54,11 @@ function delBlogList(state = [], action) {
     }
 }
 
->>>>>>> 3e734658b9f5d0385b93a57a4bc39df032d96e3f
 export const finalReducer = combineReducers({
     addName,
     addAge,
     getBlogList,
-<<<<<<< HEAD
-=======
     writeBlogList,
     updateBlogList,
     delBlogList
->>>>>>> 3e734658b9f5d0385b93a57a4bc39df032d96e3f
 })
