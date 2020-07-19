@@ -21,6 +21,7 @@ function addAge(state = 0, action) {
 }
 
 function getBlogList(state = [], action) {
+    // debugger
     switch (action.type) {
         case GETBOLGLIST:
             return action.data
@@ -30,6 +31,7 @@ function getBlogList(state = [], action) {
 }
 
 function writeBlogList(state = [], action) {
+    // debugger
     switch (action.type) {
         case WRITEBOLGLIST:
             return action.data

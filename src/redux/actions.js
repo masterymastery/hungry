@@ -24,12 +24,14 @@ export const getBlogListAsync = () => {
     }
 }
 
-export const writeBlogList = (response) => ({ type: WRITEBOLGLIST, data: response })
-
 export const writeBlogListAsync = (param) => {
-    return (dispatch) => {
-        _writeBlogList(param).then((res) => {
-            dispatch(writeBlogList(res))
-        })
-    }
+    return _writeBlogList(param)
+}
+
+export const updateBlogListAsync = (param) => {
+    return _updateBlog(param)
+}
+
+export const deleteBlogListAsync = (param) => {
+    return _deleteBlog(param)
 }

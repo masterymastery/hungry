@@ -13,7 +13,7 @@ class App extends React.Component {
             <Router>
                 <div className="App">
                     <Header></Header>
-                    <Link to="/">文章列表</Link>
+                    <Link style={{'marginRight':'20px'}} to="/">文章列表</Link>
                     <Link to="/writeBlog">写文章</Link>
                     <hr />
                     <Route path="/" exact component={preview}></Route>
