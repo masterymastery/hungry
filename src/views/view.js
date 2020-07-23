@@ -74,6 +74,9 @@ class view extends React.Component {
             width: '60%',
             margin: '0 auto',
         }
+        const button = {
+            marginTop:'10px'
+        }
         const { TextArea } = Input
         return (
             <div style={view} className="view">
@@ -84,8 +87,8 @@ class view extends React.Component {
                 简介：
                 <Input value={this.state.currentData.intro} onChange={this.intro_change.bind(this)} placeholder="简介：" />
                 内容：
-                <TextArea rows={4} value={this.state.currentData.content} onChange={this.content_change.bind(this)} />
-                <Button type="primary" onClick={this.updateFunc}>
+                <TextArea rows={19} value={this.state.currentData.content} onChange={this.content_change.bind(this)} />
+                <Button style={button} type="primary" onClick={this.updateFunc}>
                     确认修改
                 </Button>
                 {/* {JSON.stringify(blogList.find((item) => item.id === parseInt(this.state.blogId)))} */}

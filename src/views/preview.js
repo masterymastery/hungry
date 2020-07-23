@@ -1,9 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Button, message } from 'antd'
+import { Modal, Button, message } from 'antd'
+import { ExclamationCircleOutlined } from '@ant-design/icons'
 import { connect } from 'react-redux'
 import { getBlogListAsync, deleteBlogListAsync } from '../redux/actions'
-
+const { confirm } = Modal
 class preview extends React.Component {
     constructor(props) {
         super(props)
@@ -12,14 +13,26 @@ class preview extends React.Component {
         }
         this.props.getBlogListAsync()
     }
-    deleteTd = async (e, id) => {
+    showConfirm = (e, id) => {
+        var self = this
+        confirm({
+            title: 'Do you Want to delete these items?',
+            icon: <ExclamationCircleOutlined />,
+            content: 'Some descriptions',
+            onOk() {
+                self.deleteTd(id)
+            },
+            onCancel() {},
+        })
+    }
+    deleteTd = async (id) => {
         var res = await deleteBlogListAsync({ id: id })
         if (res.errcode === 0) {
             message.success('刪除成功')
+            this.props.getBlogListAsync()
         } else {
             message.error(res.errmsg)
         }
-        this.props.getBlogListAsync()
     }
     render() {
         const preview = {
@@ -47,7 +60,7 @@ class preview extends React.Component {
                                 </td>
                                 <td>{item.createTime}</td>
                                 <td>
-                                    <Button type="primary" onClick={(e) => this.deleteTd(e, item.id)}>
+                                    <Button type="primary" onClick={(e) => this.showConfirm(e, item.id)}>
                                         删除
                                     </Button>
                                 </td>
